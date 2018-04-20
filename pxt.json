@@ -1,0 +1,21 @@
+{
+    "name": "blueBitKit",
+    "version": "0.0.0",
+    "description": "",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "neopixel": "github:microsoft/pxt-neopixel#v0.3.10"
+    },
+    "files": [
+        "README.md",
+        "blueBitKit.cpp",
+        "blueBitKit.ts",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
