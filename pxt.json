@@ -1,6 +1,6 @@
 {
     "name": "blueBitKit",
-    "version": "0.0.0",
+    "version": "0.0.10",
     "description": "",
     "license": "MIT",
     "dependencies": {
@@ -12,7 +12,9 @@
         "blueBitKit.cpp",
         "blueBitKit.ts",
         "shims.d.ts",
-        "enums.d.ts"
+        "enums.d.ts",
+        "_locales/zh/blueBitKit-strings.json",
+        "_locales/zh/blueBitKit-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
