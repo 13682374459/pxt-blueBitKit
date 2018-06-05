@@ -8,6 +8,7 @@
   "SHT20.temperature|block": "温度",
   "Scroll.left|block": "左",
   "Scroll.right|block": "右",
+  "blueBitKit.ButtonPress|block": "按键传感器 引脚|%index|被按下",
   "blueBitKit.ColorSensor|block": "I2C颜色传感器的|%index|值",
   "blueBitKit.MP3Play|block": "MP3模块播放第|%num|首歌",
   "blueBitKit.MP3Volume|block": "设置MP3模块音量为|%vol",

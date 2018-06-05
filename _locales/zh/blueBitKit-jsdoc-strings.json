@@ -1,5 +1,6 @@
 {
   "blueBitKit": "Blue:bit传感器",
+  "blueBitKit.ButtonPress": "*",
   "blueBitKit.ColorSensor": "返回颜色传感器的红/绿/蓝 颜色值,范围为0~255.",
   "blueBitKit.MP3Play": "需设置串口引脚和波特率(9600).",
   "blueBitKit.MP3Volume": "音量",

@@ -146,6 +146,29 @@ namespace blueBitKit {
 
     }
 
+    /**
+     * 
+     * 
+     */
+    //% blockId=Button_Press block="bule:bit ButtonPress by|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function ButtonPress(pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+
+    }
 
 
     /**
@@ -157,7 +180,7 @@ namespace blueBitKit {
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=89
     //% blockGap=15
-    export function writeDigital(pin: DigitalPin, value: number): void {
+    export function ButtonPress(pin: DigitalPin, value: number): void {
         if (!INITPIN) {
             init_pin();
             INITPIN = true;
@@ -171,8 +194,9 @@ namespace blueBitKit {
         return pins.digitalWritePin(pin, value);
 
     }
-
-
+	
+	
+	
     /**
        * read analog pin only pin0/1/2/3/4/10
        * 
