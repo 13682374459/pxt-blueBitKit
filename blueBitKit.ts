@@ -126,31 +126,6 @@ namespace blueBitKit {
      * 
      * 
      */
-    //% blockId=read_digital block="bule:bit readDigital|%pin"
-	//% 上一行的block不会影响模块文字的js里的文字
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
-    //% weight=90
-    //% blockGap=15
-    export function readDigital(pin: DigitalPin): number {
-        if (!INITPIN) {
-            init_pin();
-            INITPIN = true;
-        }
-        if (ifledPin(pin)) {
-            if (!LEDFREE) {
-                ledPinfree();
-                LEDFREE = true;
-            }
-
-        }
-        return pins.digitalReadPin(pin);
-
-    }
-
-    /**
-     * 
-     * 
-     */
     //% blockId=Button_Press block="ButtonPress by|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=90
@@ -171,6 +146,222 @@ namespace blueBitKit {
 
     }
 
+    /**
+     * 
+     * 
+     */
+    //% blockId=infrared_is_triggered block="Triggered the infrared proximity sensor by|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function infraredIsTriggered(pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+
+    }	
+	
+	/**
+     * 
+     * 
+     */
+    //% blockId=sound_is_triggered block="sound sensor is triggered in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function soundIsTriggered(pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+
+    }
+
+	/**
+     * 
+     * 
+     */
+    //% blockId=Track_is_Dark block="Track sensor detected black in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function TrackIsDark (pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+
+    }
+	
+	/**
+     * 
+     * 
+     */
+    //% blockId=shockSensor_is_Triggered block="Shock Sensor is triggered in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function shockSensor (pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+		
+    }
+	
+	/**
+     * 
+     * 
+     */
+    //% blockId=get_Rfid block="Get the Rfid in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function getRfid (pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+		
+    }	
+	
+	/**
+     * 
+     * 
+     */
+    //% blockId=finger_Print block="Fingerprint verification passed in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function fingerPrint (pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+		
+    }	
+	
+	/**
+     * 
+     * 
+     */
+    //% blockId=Human_Infrared block="Human Infrared sensor is triggered in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function HumanInfrared (pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+		
+    }	
+	
+	/**
+     * 
+     * 
+     */
+    //% blockId=magnetic_Switch block="Magnetic switch is triggered in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function magneticSwitch (pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+		
+    }	
+				
+    /**
+     * 
+     * 
+     */
+    //% blockId=read_digital block="bule:bit readDigital|%pin"
+	//% 上一行的block不会影响模块文字的js里的文字
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=90
+    //% blockGap=15
+    export function readDigital(pin: DigitalPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.digitalReadPin(pin);
+
+    }
 
     /**
      * 
