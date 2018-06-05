@@ -127,6 +127,7 @@ namespace blueBitKit {
      * 
      */
     //% blockId=read_digital block="bule:bit readDigital|%pin"
+	//% 上一行的block不会影响模块文字的js里的文字
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=90
     //% blockGap=15
@@ -180,7 +181,7 @@ namespace blueBitKit {
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=89
     //% blockGap=15
-    export function ButtonPress(pin: DigitalPin, value: number): void {
+    export function writeDigital(pin: DigitalPin, value: number): void {
         if (!INITPIN) {
             init_pin();
             INITPIN = true;
