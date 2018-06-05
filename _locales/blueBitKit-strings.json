@@ -8,7 +8,7 @@
   "SHT20.temperature|block": "temperature",
   "Scroll.left|block": "left",
   "Scroll.right|block": "right",
-  "blueBitKit.ButtonPress|block": "Button Pressed by|%index|",
+  "blueBitKit.ButtonPress|block": "Button Pressed by|%pin",
   "blueBitKit.ColorSensor|block": "get ColorSensor|%index",
   "blueBitKit.MP3Play|block": "MP3Play|song|%num",
   "blueBitKit.MP3Volume|block": "MP3Volume|%vol",

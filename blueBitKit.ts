@@ -150,7 +150,7 @@ namespace blueBitKit {
      * 
      * 
      */
-    //% blockId=Button_Press block="bule:bit ButtonPress by|%pin"
+    //% blockId=Button_Press block="ButtonPress by|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=90
     //% blockGap=15
