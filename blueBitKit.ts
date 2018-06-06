@@ -82,6 +82,13 @@ enum MIDI_Note {
     ON = 1
 };
 
+enum ComMon {
+    //%block="off"
+    OFF = 0,
+    //%block="on"
+    ON = 1
+};
+
 /**
  * Functions for blueBit Kit 
  */
@@ -337,13 +344,34 @@ namespace blueBitKit {
         return pins.digitalReadPin(pin);
 		
     }	
-				
+		
+    /**
+        * @param pin , eg: P0
+        * @param index , eg: ComMon.ON
+        */
+    //% blockId=usbSwitch block="USB switch in|%pin|ON_OFF|%index"
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=1 index.fieldOptions.width="200" 
+    //% weight=55
+    //% blockGap=15
+    export function usbSwitch(pin: DigitalPin, index: ComMon): void {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+        }
+        return pins.digitalWritePin(pin, index);
+    }
+	
     /**
      * 
      * 
      */
     //% blockId=read_digital block="bule:bit readDigital|%pin"
-	//% 上一行的block不会影响模块文字的js里的文字
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=90
     //% blockGap=15
