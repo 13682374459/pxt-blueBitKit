@@ -10,7 +10,7 @@
   "blueBitKit.HumanInfrared": "*",
   "blueBitKit.magneticSwitch": "*",
   "blueBitKit.usbSwitch": "*",
-  "blueBitKit.usbSwitch|param|index": "on/off, eg: MIDI_Note.ON",
+  "blueBitKit.usbSwitch|param|index": "Switch, eg: ComMon.ON",
   "blueBitKit.usbSwitch|param|pin": "P0~P20, eg: P0",
   "blueBitKit.ColorSensor": "返回颜色传感器的红/绿/蓝 颜色值,范围为0~255.",
   "blueBitKit.MP3Play": "需设置串口引脚和波特率(9600).",

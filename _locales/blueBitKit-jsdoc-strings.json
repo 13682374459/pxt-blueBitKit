@@ -10,7 +10,7 @@
   "blueBitKit.HumanInfrared": "*",
   "blueBitKit.magneticSwitch": "*",
   "blueBitKit.usbSwitch": "*",
-  "blueBitKit.usbSwitch|param|index": "on/off, eg: ComMon.ON",
+  "blueBitKit.usbSwitch|param|index": "Switch, eg: ComMon.ON",
   "blueBitKit.usbSwitch|param|pin": "P0~P20, eg: P0",
   "blueBitKit.ColorSensor": "blue:bit- Color module.\nreturn red/green/blue ColorValue,Rang 0~255.\npin:I2C.",
   "blueBitKit.MP3Play": "blue:bit-  mp3 player module.\nmp3 player .set baud rate 9600\npin:Serial(rate:9600)",
