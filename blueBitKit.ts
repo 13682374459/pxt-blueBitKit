@@ -347,13 +347,14 @@ namespace blueBitKit {
 		
     /**
         * @param pin , eg: P0
-        * @param index , eg: ComMon.ON
+        * @param value , eg: 1
         */
-    //% blockId=usbSwitch block="In|%pin|USB switch ON_OFF|%index"
-    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=1 index.fieldOptions.width="200" 
-    //% weight=55
+    //% blockId=usbSwitch block="In|%pin|USB switch ON_OFF|%value"
+    //% value.min=0 value.max=1
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=89
     //% blockGap=15
-    export function usbSwitch(pin: DigitalPin, index: ComMon): void {
+    export function usbSwitch(pin: DigitalPin, value: ComMon): void {
         if (!INITPIN) {
             init_pin();
             INITPIN = true;
@@ -364,18 +365,42 @@ namespace blueBitKit {
                 LEDFREE = true;
             }
         }
-        return pins.digitalWritePin(pin, index);
+        return pins.digitalWritePin(pin, value);
+    }
+		
+    /**
+        * @param pin , eg: P0
+        * @param value , eg: 1
+        */
+    //% blockId=FanSwitch block="In|%pin|Fan switch ON_OFF|%value"
+    //% value.min=0 value.max=1
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=89
+    //% blockGap=15
+    export function FanSwitch(pin: DigitalPin, value: number): void {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+        }
+        return pins.digitalWritePin(pin, value);	
     }
 		
     /**
         * @param pin , eg: P0
         * @param index , eg: ComMon.ON
         */
-    //% blockId=FanSwitch block="In|%pin|Fan switch ON_OFF|%index"
-    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=1 index.fieldOptions.width="200" 
-    //% weight=55
+    //% blockId=LaserSwitch block="In|%pin|Laser ON_OFF|%value"
+    //% value.min=0 value.max=1
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=89
     //% blockGap=15
-    export function FanSwitch(pin: DigitalPin, index: ComMon): void {
+    export function LaserSwitch(pin: DigitalPin, value: number): void {
         if (!INITPIN) {
             init_pin();
             INITPIN = true;
@@ -386,29 +411,7 @@ namespace blueBitKit {
                 LEDFREE = true;
             }
         }
-        return pins.digitalWritePin(pin, index);	
-    }
-		
-    /**
-        * @param pin , eg: P0
-        * @param index , eg: ComMon.ON
-        */
-    //% blockId=LaserSwitch block="In|%pin|Laser ON_OFF|%index"
-    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=1 index.fieldOptions.width="200" 
-    //% weight=55
-    //% blockGap=15
-    export function LaserSwitch(pin: DigitalPin, index: ComMon): void {
-        if (!INITPIN) {
-            init_pin();
-            INITPIN = true;
-        }
-        if (ifledPin(pin)) {
-            if (!LEDFREE) {
-                ledPinfree();
-                LEDFREE = true;
-            }
-        }
-        return pins.digitalWritePin(pin, index);	
+        return pins.digitalWritePin(pin, value);	
     }
 			
     /**
