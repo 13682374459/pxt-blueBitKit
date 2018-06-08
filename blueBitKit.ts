@@ -349,7 +349,7 @@ namespace blueBitKit {
         * @param pin , eg: P0
         * @param index , eg: ComMon.ON
         */
-    //% blockId=usbSwitch block="USB switch in|%pin|ON_OFF|%index"
+    //% blockId=usbSwitch block="USB switch ON_OFF|%index|in|%pin"
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=1 index.fieldOptions.width="200" 
     //% weight=55
     //% blockGap=15
@@ -366,7 +366,29 @@ namespace blueBitKit {
         }
         return pins.digitalWritePin(pin, index);
     }
-	
+		
+    /**
+        * @param pin , eg: P0
+        * @param index , eg: ComMon.ON
+        */
+    //% blockId=FanSwitch block="Fan switch ON_OFF|%index|in|%pin"
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=1 index.fieldOptions.width="200" 
+    //% weight=55
+    //% blockGap=15
+    export function FanSwitch(pin: DigitalPin, index: ComMon): void {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+        }
+        return pins.digitalWritePin(pin, index);
+    }
+		
     /**
      * 
      * 
