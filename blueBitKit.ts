@@ -89,6 +89,14 @@ enum ComMon {
     ON = 1
 };
 
+enum Rec_Play {
+    //%block="rec"
+    rec = 0,
+    //%block="play"
+    play = 1
+};
+
+
 /**
  * Functions for blueBit Kit 
  */
@@ -354,7 +362,7 @@ namespace blueBitKit {
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=89
     //% blockGap=15
-    export function usbSwitch(pin: DigitalPin, value: ComMon): void {
+    export function usbSwitch(pin: DigitalPin, value: number): void {
         if (!INITPIN) {
             init_pin();
             INITPIN = true;
@@ -413,7 +421,32 @@ namespace blueBitKit {
         }
         return pins.digitalWritePin(pin, value);	
     }
-			
+   
+       /**
+        * Rec_or_Play module.
+        * @param status Rec or Play, eg: Rec_Play.rec 
+        * @param rec P0~P20, eg: 0
+        * @param play P0~P20, eg: 1
+        */
+    //% blockId=Rec_or_Play block="Recorder|%status|in RecPin|%rec|and PlayPin|%play"
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=3 index.fieldOptions.width="300" 
+    //% rec.fieldEditor="gridpicker" rec.fieldOptions.columns=3 rec.fieldOptions.width="300" 
+    //% play.fieldEditor="gridpicker" play.fieldOptions.columns=3 play.fieldOptions.width="300" 
+    //% weight=58
+    //% blockGap=15
+    export function Rec_or_Play(status: Rec_Play, rec:DigitalPin, play: DigitalPin): void {
+
+        if (status == 1) {
+            writeDigital(rec,0);
+            writeDigital(play,1);
+        }
+        if (status == 0) {
+            writeDigital(rec,1);
+            writeDigital(play,0);
+        }
+        return;
+    }
+  			
     /**
      * 
      * 
@@ -927,7 +960,6 @@ namespace blueBitKit {
      * @param rx the new reception pin, eg: DigitalPin.P0
      * @param rate the new baud rate. eg: 115200
      */
-
     //% blockId=SerialRedirect block="SerialRedirect|TX %tx|RX %rx|at baud rate %rate"
     //% tx.fieldEditor="gridpicker" tx.fieldOptions.columns=3 tx.fieldOptions.width="300" 
     //% rx.fieldEditor="gridpicker" rx.fieldOptions.columns=3 rx.fieldOptions.width="300" 
