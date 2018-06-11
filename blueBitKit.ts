@@ -435,14 +435,17 @@ namespace blueBitKit {
     //% weight=58
     //% blockGap=15
     export function Rec_or_Play(status: Rec_Play, rec:DigitalPin, play: DigitalPin): void {
+        //import { writeDigital } from "./blueBitKit";
+
+        //let writeDigital = new writeDigital();
 
         if (status == 1) {
-            writeDigital(rec,0);
-            writeDigital(play,1);
+            pins.digitalWritePin(rec,0);
+            pins.digitalWritePin(play,1);
         }
         if (status == 0) {
-            writeDigital(rec,1);
-            writeDigital(play,0);
+            pins.digitalWritePin(rec,1);
+            pins.digitalWritePin(play,0);
         }
         return;
     }
