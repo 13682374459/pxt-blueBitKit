@@ -25,6 +25,7 @@
   "blueBitKit.FanSwitch|block": "In|%pin|Fan switch ON_OFF|%value",
   "blueBitKit.LaserSwitch|block": "In|%pin|Laser ON_OFF|%value",
   "blueBitKit.Rec_or_Play|block":"Recorder|%status|in RecPin|%rec|and PlayPin|%play", 
+  "blueBitKit.Stop_RecPlay|block":"Turn off Recorder in RecPin|%rec|and PlayPin|%play", 
   "blueBitKit.ColorSensor|block": "get ColorSensor|%index",
   "blueBitKit.MP3Play|block": "MP3Play|song|%num",
   "blueBitKit.MP3Volume|block": "MP3Volume|%vol",
