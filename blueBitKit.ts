@@ -93,16 +93,33 @@ enum Rec_Play {
     //%block="rec"
     rec = 0,
     //%block="play"
-    play = 1
+    play = 1,
     //%block="stop"
-    play = 2
+    stop = 2
 };
+
+enum motor_status {
+    //%block="clock"
+    clock = 0,
+    //%block="anticlock"
+    anticlock = 1,
+    //%block="stop"
+    stop = 2
+};
+
+enum Rocker_axis {
+    //%block="X"
+    X = 0,
+    //%block="Y"
+    Y = 1
+};
+
 
 
 /**
  * Functions for blueBit Kit 
  */
-//% weight=10 color=#8A2BE2 icon="\uf042" block="blueBitKit"
+//% weight=10 color=#C0FF3E icon="\uf042" block="blueBitKit"
 namespace blueBitKit {
 
 
@@ -455,7 +472,192 @@ namespace blueBitKit {
         return; //实测：pins.digitalWritePin()换成writeDigital()来return无效
     }               //结论: 要return属性(附参数) 不能写了函数直接return
    
-  	  		
+    /**
+     * 
+     * 
+     */
+    //% blockId=LEDbrightness block="Set LED brightness in pin|%pin|to|%value"
+    //% value.min=0 value.max=1023
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=87
+    //% blockGap=40
+    export function LEDbrightness(pin: AnalogPin, value: number): void {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+        }
+        return pins.analogWritePin(pin, value);
+    }
+    
+       /**
+        * Motor_on_off module.
+        * @param status motor status, eg: motor_status.clock 
+        * @param speed 0~1023, eg: 300
+        * @param ain1 P0~P20, eg: P1
+        * @param ain2 P0~P20, eg: P0
+        */
+    //% blockId=Motor_on_off block="Set DC motor|%status|with speed|%speed|in pin AIN1|%ain1|and pin AIN2|%ain2"
+    //% speed.min=0 speed.max=1023
+    //% status.fieldEditor="gridpicker" status.fieldOptions.columns=3 status.fieldOptions.width="300" 
+    //% ain1.fieldEditor="gridpicker" ain1.fieldOptions.columns=3 ain1.fieldOptions.width="300" 
+    //% ain2.fieldEditor="gridpicker" ain2.fieldOptions.columns=3 ain2.fieldOptions.width="300" 
+    //% weight=58
+    //% blockGap=15
+    export function Motor_on_off(status: motor_status, speed:value, ain1:AnalogPin, ain2: AnalogPin): void {
+
+        if (status == 2) {                          //停止
+            pins.analogWritePin(ain1,1); 
+            pins.analogWritePin(ain2,1);
+        }
+        if (status == 1) {                         //反转
+            pins.analogWritePin(ain1,1); 
+            pins.analogWritePin(ain2,speed);
+        }
+        if (status == 0) {                         //正转
+            pins.analogWritePin(ain1,speed);
+            pins.analogWritePin(ain2,1);
+        }
+        return; //实测：pins.digitalWritePin()换成writeDigital()来return无效
+    }               //结论: 要return属性(附参数) 不能写了函数直接return
+     
+ 	
+    /**
+       * read analog pin only pin0/1/2/3/4/10
+       * 
+       */
+    //% blockId=water_level block="Values of water level sensors in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=88
+    //% blockGap=15
+    export function water_level(pin: AnalogPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+
+        }
+        return pins.analogReadPin(pin);
+    }
+  	
+    /**
+       * read analog pin only pin0/1/2/3/4/10
+       */
+    //% blockId=Rotational_sensors block="Values of rotational potentiometer in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=88
+    //% blockGap=15
+    export function Rotational_sensors(pin: AnalogPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+        }
+        return pins.analogReadPin(pin);
+    }
+  	
+    /**
+       * read analog pin only pin0/1/2/3/4/10
+       */
+    //% blockId= sound_sensors block="Values of sound sensor in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=88
+    //% blockGap=15
+    export function sound_sensors(pin: AnalogPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+        }
+        return pins.analogReadPin(pin);
+    }
+
+    /**
+       * read analog pin only pin0/1/2/3/4/10
+       */
+    //% blockId= soil_moisture_sensor block="Values of soil moisture sensor in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=88
+    //% blockGap=15
+    export function soil_moisture_sensor(pin: AnalogPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+        }
+        return pins.analogReadPin(pin);
+    }
+ 
+    /**
+       * read analog pin only pin0/1/2/3/4/10
+       */
+    //% blockId= Analog_ray_sensor  block="Values of Analog ray sensor in|%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
+    //% weight=88
+    //% blockGap=15
+    export function Analog_ray_sensor(pin: AnalogPin): number {
+        if (!INITPIN) {
+            init_pin();
+            INITPIN = true;
+        }
+        if (ifledPin(pin)) {
+            if (!LEDFREE) {
+                ledPinfree();
+                LEDFREE = true;
+            }
+        }
+        return pins.analogReadPin(pin);
+    }
+    
+       /**
+        * Rocker_sensor module.
+        * @param axis Rocker_axis, eg: Rocker_axis.X 
+        * @param A0 P0/P1/P2/P3/P4/P10, eg: P1
+        * @param A1 P0/P1/P2/P3/P4/P10, eg: P0
+        */
+    //% blockId=Rocker_sensor block="Value of rocker sensor in|%axis|in A0|%A0|in A1|%A1"
+    //% axis.fieldEditor="gridpicker" axis.fieldOptions.columns=3 axis.fieldOptions.width="300" 
+    //% A0.fieldEditor="gridpicker" A0.fieldOptions.columns=3 A0.fieldOptions.width="300" 
+    //% A1.fieldEditor="gridpicker" A1.fieldOptions.columns=3 A1.fieldOptions.width="300" 
+    //% weight=58
+    //% blockGap=15
+    export function Rocker_sensor(axis: Rocker_axis, A0:AnalogPin, A1: AnalogPin): void {
+
+        if (axis == 0) {                          //摇杆传感器X轴
+            pins.analogReadPin(A1);
+        }
+        if (axis == 1) {                         //摇杆传感器Y轴
+            pins.analogReadPin(A0); 
+        }
+        return; 
+    }               
+     
+ 		
     /**
      * 
      * 
@@ -503,9 +705,7 @@ namespace blueBitKit {
         return pins.digitalWritePin(pin, value);
 
     }
-	
-	
-	
+		
     /**
        * read analog pin only pin0/1/2/3/4/10
        * 
