@@ -12,6 +12,7 @@
   "Scroll.right|block": "right",
   "Rec_Play.rec|block": "Rec",
   "Rec_Play.play|block": "Play",
+  "Rec_Play.stop|block": "stop",
   "blueBitKit.ButtonPress|block": "Button Pressed by|%pin",
   "blueBitKit.infraredIsTriggered|block": "Trigger the infrared proximity sensor in|%pin",
   "blueBitKit.soundIsTriggered|block": "sound sensor is triggered in|%pin",
