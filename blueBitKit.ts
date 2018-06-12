@@ -28,7 +28,6 @@ enum SHT20 {
     temperature = 1,
     //%block="humidity"
     humidity = 2
-
 };
 
 enum ColorSensor {
@@ -37,8 +36,7 @@ enum ColorSensor {
     //%block="green"
     green = 2,
     //%block="blue"
-    blue = 3,
-
+    blue = 3
 };
 
 
@@ -114,14 +112,12 @@ enum Rocker_axis {
     Y = 1
 };
 
-
-
 /**
  * Functions for blueBit Kit 
  */
 //% weight=10 color=#8A2BE2 icon="\uf042" block="blueBitKit"
 namespace blueBitKit {
-//color和icon要搭配使用？makecode官方提供的配套？
+
 
     let INITPIN = false;
     let LEDFREE = false;
@@ -155,7 +151,7 @@ namespace blueBitKit {
         else
             return false;
     }
-
+	
     /**
      * 
      * 
@@ -373,9 +369,9 @@ namespace blueBitKit {
     }	
 		
     /**
-        * @param pin , eg: P0
-        * @param value , eg: 1
-        */
+     * @param pin , eg: P0
+     * @param value , eg: 1
+     */
     //% blockId=usbSwitch block="In|%pin|USB switch ON_OFF|%value"
     //% value.min=0 value.max=1
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
@@ -396,9 +392,9 @@ namespace blueBitKit {
     }
 		
     /**
-        * @param pin , eg: P0
-        * @param value , eg: 1
-        */
+     * @param pin , eg: P0
+     * @param value , eg: 1
+     */
     //% blockId=FanSwitch block="In|%pin|Fan switch ON_OFF|%value"
     //% value.min=0 value.max=1
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
@@ -419,9 +415,9 @@ namespace blueBitKit {
     }
 		
     /**
-        * @param pin , eg: P0
-        * @param index , eg: ComMon.ON
-        */
+     * @param pin , eg: P0
+     * @param index , eg: ComMon.ON
+     */
     //% blockId=LaserSwitch block="In|%pin|Laser ON_OFF|%value"
     //% value.min=0 value.max=1
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
@@ -441,12 +437,12 @@ namespace blueBitKit {
         return pins.digitalWritePin(pin, value);	
     }
    
-       /**
-        * Rec_or_Play module.
-        * @param status Rec or Play, eg: Rec_Play.rec 
-        * @param rec P0~P20, eg: P1
-        * @param play P0~P20, eg: P0
-        */
+    /**
+     * Rec_or_Play module.
+     * @param status Rec or Play, eg: Rec_Play.rec 
+     * @param rec P0~P20, eg: P1
+     * @param play P0~P20, eg: P0
+     */
     //% blockId=Rec_or_Play block="Recorder|%status|in RecPin|%rec|and PlayPin|%play"
     //% status.fieldEditor="gridpicker" status.fieldOptions.columns=3 status.fieldOptions.width="300" 
     //% rec.fieldEditor="gridpicker" rec.fieldOptions.columns=3 rec.fieldOptions.width="300" 
@@ -495,13 +491,13 @@ namespace blueBitKit {
         return pins.analogWritePin(pin, value);
     }
     
-       /**
-        * Motor_on_off module.
-        * @param status motor status, eg: motor_status.clock 
-        * @param speed 0~1023, eg: 300
-        * @param ain1 P0~P20, eg: P1
-        * @param ain2 P0~P20, eg: P0
-        */
+    /**
+     * Motor_on_off module.
+     * @param status motor status, eg: motor_status.clock 
+     * @param speed 0~1023, eg: 300
+     * @param ain1 P0~P20, eg: P1
+     * @param ain2 P0~P20, eg: P0
+     */
     //% blockId=Motor_on_off block="Set DC motor|%status|with speed|%speed|in pin AIN1|%ain1|and pin AIN2|%ain2"
     //% speed.min=0 speed.max=1023
     //% status.fieldEditor="gridpicker" status.fieldOptions.columns=3 status.fieldOptions.width="300" 
@@ -528,9 +524,9 @@ namespace blueBitKit {
      
  	
     /**
-       * read analog pin only pin0/1/2/3/4/10
-       * 
-       */
+     * read analog pin only pin0/1/2/3/4/10
+     * 
+     */
     //% blockId=water_level block="Values of water level sensors in|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=88
@@ -551,8 +547,8 @@ namespace blueBitKit {
     }
   	
     /**
-       * read analog pin only pin0/1/2/3/4/10
-       */
+     * read analog pin only pin0/1/2/3/4/10
+     */
     //% blockId=Rotational_sensors block="Values of rotational potentiometer in|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=88
@@ -572,8 +568,8 @@ namespace blueBitKit {
     }
   	
     /**
-       * read analog pin only pin0/1/2/3/4/10
-       */
+     * read analog pin only pin0/1/2/3/4/10
+     */
     //% blockId= sound_sensors block="Values of sound sensor in|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=88
@@ -593,8 +589,8 @@ namespace blueBitKit {
     }
 
     /**
-       * read analog pin only pin0/1/2/3/4/10
-       */
+     * read analog pin only pin0/1/2/3/4/10
+     */
     //% blockId= soil_moisture_sensor block="Values of soil moisture sensor in|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=88
@@ -614,8 +610,8 @@ namespace blueBitKit {
     }
  
     /**
-       * read analog pin only pin0/1/2/3/4/10
-       */
+     * read analog pin only pin0/1/2/3/4/10
+     */
     //% blockId= Analog_ray_sensor  block="Values of Analog ray sensor in|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=88
@@ -634,12 +630,12 @@ namespace blueBitKit {
         return pins.analogReadPin(pin);
     }
     
-       /**
-        * Rocker_sensor module.
-        * @param axis Rocker_axis, eg: Rocker_axis.X 
-        * @param A0 P0/P1/P2/P3/P4/P10, eg: P1
-        * @param A1 P0/P1/P2/P3/P4/P10, eg: P0
-        */
+    /**
+     * Rocker_sensor module.
+     * @param axis Rocker_axis, eg: Rocker_axis.X 
+     * @param A0 P0/P1/P2/P3/P4/P10, eg: P1
+     * @param A1 P0/P1/P2/P3/P4/P10, eg: P0
+     */
     //% blockId=Rocker_sensor block="Value of rocker sensor in|%axis|in A0|%A0|in A1|%A1"
     //% axis.fieldEditor="gridpicker" axis.fieldOptions.columns=3 axis.fieldOptions.width="300" 
     //% A0.fieldEditor="gridpicker" A0.fieldOptions.columns=3 A0.fieldOptions.width="300" 
@@ -657,7 +653,6 @@ namespace blueBitKit {
         return; 
     }               
      
- 		
     /**
      * 
      * 
@@ -682,6 +677,8 @@ namespace blueBitKit {
 
     }
 
+
+
     /**
      * 
      * 
@@ -705,11 +702,12 @@ namespace blueBitKit {
         return pins.digitalWritePin(pin, value);
 
     }
-		
+
+
     /**
-       * read analog pin only pin0/1/2/3/4/10
-       * 
-       */
+     * read analog pin only pin0/1/2/3/4/10
+     * 
+     */
     //% blockId=read_analog block="bule:bit read analog|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=88
@@ -761,9 +759,9 @@ namespace blueBitKit {
     }
 
     /**
-       * blue:bit- NTC Temp module.
-       * return temperature,unit C.
-       */
+     * blue:bit- NTC Temp module.
+     * return temperature,unit C.
+     */
     //% blockId=getNTC block="get NTCTemp|%pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.width="300" 
     //% weight=85
@@ -1169,6 +1167,7 @@ namespace blueBitKit {
      * @param rx the new reception pin, eg: DigitalPin.P0
      * @param rate the new baud rate. eg: 115200
      */
+
     //% blockId=SerialRedirect block="SerialRedirect|TX %tx|RX %rx|at baud rate %rate"
     //% tx.fieldEditor="gridpicker" tx.fieldOptions.columns=3 tx.fieldOptions.width="300" 
     //% rx.fieldEditor="gridpicker" rx.fieldOptions.columns=3 rx.fieldOptions.width="300" 
