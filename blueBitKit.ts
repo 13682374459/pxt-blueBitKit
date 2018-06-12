@@ -119,9 +119,9 @@ enum Rocker_axis {
 /**
  * Functions for blueBit Kit 
  */
-//% color=190 weight=10 icon="\uf042" block="blueBitKit"
+//% color=#E3008C weight=96 icon="\uf012"
 namespace blueBitKit {
-
+//color和icon要搭配使用？makecode官方提供的配套？
 
     let INITPIN = false;
     let LEDFREE = false;
