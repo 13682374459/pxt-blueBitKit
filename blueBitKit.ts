@@ -232,6 +232,7 @@ namespace blueBitKit {
         return pins.digitalReadPin(pin);
 
     }
+
 	
 	/**
      * 
