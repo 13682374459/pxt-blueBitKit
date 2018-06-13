@@ -450,7 +450,23 @@ namespace blueBitKit {
         return; //实测：pins.digitalWritePin()换成writeDigital()来return无效
     }               //结论: 要return属性(附参数) 不能写了函数直接return
    
+       /**
+        * Stop_RecPlay module.
+        * @param rec P0~P20, eg: 0
+        * @param play P0~P20, eg: 1
+        */
+    //% blockId=Stop_RecPlay block="Turn off Recorder in RecPin|%rec|and PlayPin|%play"
+    //% rec.fieldEditor="gridpicker" rec.fieldOptions.columns=3 rec.fieldOptions.width="300" 
+    //% play.fieldEditor="gridpicker" play.fieldOptions.columns=3 play.fieldOptions.width="300" 
+    //% weight=58
+    //% blockGap=15
+    export function Stop_RecPlay(rec:DigitalPin, play: DigitalPin): void {
 
+        pins.digitalWritePin(rec,0); 
+        pins.digitalWritePin(play,1);
+        return; //实测：pins.digitalWritePin()换成writeDigital()来return无效
+    }               //结论: 要return属性(附参数) 不能写了函数直接return
+  	  		
     /**
      * 
      * 
