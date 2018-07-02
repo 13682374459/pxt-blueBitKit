@@ -1409,7 +1409,7 @@ namespace blueBitKit {
     export function setOLED(OLEDx: number, OLEDy: number, OLEDtext: string): void {
 
         //uart.write('@' + str(int(0)) + ','+ str(int(0)) + ',4:' + 'Labplus' + '\r\n')
-        serial.writeString('@' + 'OLEDx' + ','+ 'OLEDy' + ':' + OLEDtext + '\r\n');
+        serial.writeString('@' + 'OLEDx' + ','+ 'OLEDy' + ',0:' + OLEDtext + '\r\n');
 
     }
 
