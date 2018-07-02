@@ -539,4 +539,11 @@ void SerialRedirect(int tx, int rx, int rate)
     uBit.serial.redirect(txp->name, rxp->name);
     uBit.serial.baud((int)rate);
 }
+
+//%
+void writeString(StringData *text) {
+    if (!text) return;
+
+    uBit.serial.send(ManagedString(text));
+    }
 }

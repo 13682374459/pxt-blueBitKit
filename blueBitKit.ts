@@ -122,6 +122,18 @@ enum MP3 {
     Stop = 2
 };
 
+enum oledFont {
+    //%block="Font5X7"
+    Font5X7 = 0,
+    //%block="SONG16X16"
+    SONG16X16 = 1,
+    //%block="SONG24X24"
+    SONG24X24 = 2,
+    //%block="Consolas32X32"
+    Consolas32X32 = 4
+};
+
+
 /**
  * Functions for blueBit Kit 
  */
@@ -1383,5 +1395,22 @@ namespace blueBitKit {
         return;
     }
 
+    /**
+     * setOLED module.
+     * @param OLEDx 0~7, eg: 0
+     * @param OLEDy 0~7, eg: 0
+     * @param OLEDtext text, eg: Labplus
+     */
+    //% blockId=setOLED block="OLED display in X|%OLEDx|Y|%OLEDy|with text|%OLEDtext"
+    //% OLEDx.min=0 OLEDx.max=7
+    //% OLEDy.min=0 OLEDy.max=7
+    //% weight=30
+    //% blockGap=15
+    export function setOLED(OLEDx: number, OLEDy: number, OLEDtext: string): void {
+
+        //uart.write('@' + str(int(0)) + ','+ str(int(0)) + ',4:' + 'Labplus' + '\r\n')
+        serial.writeString('@' + 'OLEDx' + ','+ 'OLEDy' + ':' + OLEDtext + '\r\n');
+
+    }
 
 }
