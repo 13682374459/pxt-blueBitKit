@@ -1408,7 +1408,7 @@ namespace blueBitKit {
     //% blockGap=15
     export function setOLED(OLEDx: number, OLEDy: number, OLEDtext: string): void {
 
-        serial.writeString('@' + 'OLEDx' + ','+ 'OLEDy' + ',0:' + 'OLEDtext' + '\r\n');
+        serial.writeString("@" + "OLEDx" + "," + "OLEDy" + ",0:" + "OLEDtext" + '\r\n');
     }
 
 }
