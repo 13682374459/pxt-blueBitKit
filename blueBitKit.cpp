@@ -112,7 +112,7 @@ int _getLight()
     uBit.sleep(120);
     uBit.i2c.read(BH1750_ADDR, buf, 2, false);
     uBit.sleep(10);
-    return buf[0] * 256 + buf[1];
+    return (buf[0] * 256 + buf[1])/1.2;
 }
 //%
 int _getDistance()

@@ -1395,20 +1395,21 @@ namespace blueBitKit {
         return;
     }
 
-    /**
-     * setOLED module.
-     * @param OLEDx 0~7, eg: 0
-     * @param OLEDy 0~7, eg: 0
-     * @param OLEDtext text, eg: Labplus
-     */
-    //% blockId=setOLED block="OLED display in X|%OLEDx|Y|%OLEDy|with text|%OLEDtext"
-    //% OLEDx.min=0 OLEDx.max=7
-    //% OLEDy.min=0 OLEDy.max=7
-    //% weight=30
-    //% blockGap=15
-    export function setOLED(OLEDx: number, OLEDy: number, OLEDtext: string): void {
+    // *
+     // * setOLED module.
+     // * @param OLEDx 0~7, eg: 0
+     // * @param OLEDy 0~7, eg: 0
+     // * @param OLEDtext text, eg: Labplus
+    
+   // % blockId=setOLED block="OLED display in X|%OLEDx|Y|%OLEDy|with text|%OLEDtext"
+   // % OLEDx.min=0 OLEDx.max=7
+   // % OLEDy.min=0 OLEDy.max=7
+   // % weight=30
+   // % blockGap=15
+    // export function setOLED(OLEDx: number, OLEDy: number, OLEDtext: string): void {
 
-        serial.writeString("@" + OLEDx.toString + "," + OLEDx.toString + ",0:" + OLEDtext + '\r\n');
-    }
+        // serial.writeString("@" + OLEDx.toString + "," + OLEDx.toString + ",0:" + OLEDtext + '\r\n');
+		//toString直接报错
+    // }
 
 }
